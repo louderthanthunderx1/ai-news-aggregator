@@ -6,7 +6,7 @@ from pydantic import BaseModel
 from youtube_transcript_api import YouTubeTranscriptApi
 from youtube_transcript_api._errors import TranscriptsDisabled, NoTranscriptFound
 from youtube_transcript_api.proxies import WebshareProxyConfig
-
+from rich import print
 
 class Transcript(BaseModel):
     text: str
@@ -93,7 +93,10 @@ class YouTubeScraper:
     
 if __name__ == "__main__":
     scraper = YouTubeScraper()
-    transcript: Transcript = scraper.get_transcript("jqd6_bbjhS8")
-    print(transcript.text)
-    channel_videos: List[ChannelVideo] = scraper.scrape_channel("UCn8ujwUInbJkBhffxqAPBVQ", hours=200)
+    transcript: Transcript = scraper.get_transcript("lXUZvyajciY")
+    if transcript:
+        print(transcript.text)
+    else:
+        print("Transcript not available")
+    channel_videos: List[ChannelVideo] = scraper.scrape_channel("UCXl4i9dYBrFOabk0xGmbkRA", hours=400)
     print(channel_videos)
