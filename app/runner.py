@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from app.services.config import YOUTUBE_CHANNELS
+from app.config import YOUTUBE_CHANNELS
 from app.scrapers.youtube import YouTubeScraper, ChannelVideo
 from app.scrapers.openai import OpenAIScraper, OpenAIArticle
 from app.scrapers.anthropic import AnthropicScraper, AnthropicArticle
