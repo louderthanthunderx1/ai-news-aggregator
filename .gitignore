@@ -8,8 +8,10 @@ wheels/
 
 # Virtual environments
 .venv
+.env
 
-agent/__pycache__
+app/agent/__pycache__
 app/__pycache__
-scrapers/__pycache__
-services/__pycache__
+app/scrapers/__pycache__
+app/services/__pycache__
+app/database/__pycache__
